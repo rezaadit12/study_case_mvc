@@ -33,7 +33,10 @@
             </tr>
         </thead>
         <tbody>
+            
             <?php $i = 1; ?>
+            <?php date_default_timezone_set("asia/jakarta")  ?>
+            
             <?php foreach($data['listDataBarang'] as $data) :?>
             <tr>
                 <th scope="row"><?= $i ?></th>
@@ -42,8 +45,10 @@
                 <td><?= $data['no_barang']; ?></td>
                 <td><?= $data['tgl_pinjam']; ?></td>
                 <td><?= $data['tgl_kembali']; ?></td>
+
+
                 <td>
-                    <?php if($data['tgl_pinjam'] >= $data['tgl_kembali']):?>
+                    <?php if($data['tgl_pinjam'] >= $data['tgl_kembali'] ||date('Y-m-d H:i:s') >= $data['tgl_kembali']):?>
                     <span class="badge text-bg-success">Sudah Kembali</span>
                     <?php else:?>
                     <span class="badge text-bg-danger">Belum kembali</span>

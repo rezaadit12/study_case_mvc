@@ -28,7 +28,7 @@ class Pinjam_model{
         
 
         $tglMulai = $data['tglMulai'];
-        $tglSelesai = date('Y-m-d H:i:s', strtotime($tglMulai . ' +2 days'));
+        $tglSelesai = date('Y-m-d H:i:s', strtotime($tglMulai . ' +2 minutes'));
 
         $query = "INSERT INTO $this->table
                     VALUE
